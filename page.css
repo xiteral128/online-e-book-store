@@ -1,0 +1,217 @@
+/* 全局样式 & 变量定义 */
+:root {
+  --primary-color: #3E2723;
+  --secondary-color: #F5F5DC;
+  --accent-color: #FF9800;
+  --text-dark: #212529;
+  --text-light: #6c757d;
+}
+
+body {
+  font-family: "Helvetica Neue", Microsoft YaHei, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* 导航栏样式 */
+.navbar {
+  background-color: var(--primary-color) !important;
+}
+
+.navbar-brand, .nav-link {
+  color: #fff !important;
+}
+
+.nav-link:hover {
+  color: var(--accent-color) !important;
+}
+
+/* 轮播图样式 */
+.carousel-item {
+  height: 400px;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
+}
+
+/* 分类导航 */
+.category-nav {
+  background-color: var(--secondary-color);
+  padding: 15px 0;
+  margin: 20px 0;
+}
+
+.category-item {
+  padding: 8px 15px;
+  margin: 0 5px;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: 1px solid transparent; /* 透明边框防止位移 */
+}
+
+.category-item:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: scale(1.05); /* 轻微放大 */
+  border-color: var(--accent-color); /* 边框加强调色 */
+}
+
+/* 图书卡片样式 */
+.card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* 更丝滑的过渡曲线 */
+  overflow: hidden; /* 防止内容溢出 */
+}
+
+/* 卡片悬停效果 */
+.card:hover {
+  transform: translateY(-8px) scale(1.05); /* 上移+轻微放大 */
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15); /* 加深阴影 */
+}
+
+/* 卡片标题样式 */
+.card-title {
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.card:hover .card-title {
+  color: var(--accent-color); /* 悬停时标题变主色调 */
+}
+
+/* 图书封面样式 */
+.card-img-top {
+  transition: transform 0.4s;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05); /* 封面轻微放大 */
+}
+
+/* 按钮样式 */
+.btn-outline-dark {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transition: all 0.3s;
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* 卡片内按钮增强效果 */
+.card:hover .btn-outline-dark {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: translateX(5px); /* 按钮轻微右移 */
+}
+
+.btn-accent {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+}
+
+.btn-accent:hover {
+  background-color: #e68900;
+  color: #fff;
+}
+
+/* 卡片价格文本样式 */
+.card-text.font-weight-bold {
+  color: var(--accent-color);
+}
+
+/* 详情页样式 */
+.book-detail {
+  margin: 30px 0;
+}
+
+.book-cover img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.book-info {
+  padding-left: 20px;
+}
+
+.book-intro {
+  margin-top: 20px;
+  line-height: 1.8;
+}
+
+/* 购物车样式 */
+.cart-table {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.cart-table tbody tr {
+  transition: background-color 0.3s;
+}
+
+.cart-table tbody tr:hover {
+  background-color: var(--secondary-color); /* 悬停时背景变色 */
+}
+
+.cart-total {
+  background-color: var(--secondary-color);
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* 登录/注册表单 */
+.auth-form {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.form-label {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* 页面容器样式（单页切换） */
+.page-container {
+  display: none;
+  width: 100%;
+}
+
+.page-container.active {
+  display: block;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 250px;
+  }
+  
+  .book-info {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+  
+  .category-item {
+    display: block;
+    margin: 5px 0;
+  }
+}
